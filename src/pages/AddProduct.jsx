@@ -21,7 +21,7 @@ const AddProduct = () => {
         form.reset();
         setRating(0);
 
-        fetch('https://tech-elec-shop-backend.vercel.app/products', {
+        fetch('http://localhost:5000/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

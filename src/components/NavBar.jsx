@@ -45,14 +45,14 @@ const NavBar = ({ toggleTheme }) => {
                         <NavLink to="/contact">Contact Us</NavLink>
                     </li>
 
-
+                    <li>
+                        <NavLink to="/service">Services</NavLink>
+                    </li>
 
                 </>
                 :
                 <>
-                    <li>
-                        <NavLink to="/service">Services</NavLink>
-                    </li>
+
                     <li>
                         <NavLink to="/login">Login</NavLink>
                     </li>
@@ -133,7 +133,7 @@ const NavBar = ({ toggleTheme }) => {
                                                         Add a Service
                                                     </NavLink>
                                                     <NavLink
-                                                        to="/mycart"
+                                                        to="/bookings"
                                                         className="px-4 py-1 hover:bg-base-300 rounded-lg"
                                                     >
                                                         My Sechedules

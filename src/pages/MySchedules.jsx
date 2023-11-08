@@ -6,11 +6,11 @@ import { AuthContext } from "../providers/AuthProvider";
 
 
 
-const MyCart = () => {
+const MySchedules = () => {
     const {user} = useContext(AuthContext);
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`https://tech-elec-shop-backend.vercel.app/carts`)
+        fetch(`http://localhost:5000/bookings`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -33,7 +33,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://tech-elec-shop-backend.vercel.app/carts/${id}`, {
+                fetch(`http://localhost:5000/bookings/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -79,4 +79,4 @@ const MyCart = () => {
     );
 };
 
-export default MyCart;
+export default MySchedules;
