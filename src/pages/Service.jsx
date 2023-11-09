@@ -23,13 +23,13 @@ const Service = () => {
             <Helmet>
                 <title>NEST-All Services</title>
             </Helmet>
-            <div className="mb-8">
+            <div className="mb-8 ">
                 <input
                     type="text"
                     placeholder="Search by service name"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="p-2 border border-gray-300 rounded"
+                    className="p-2  border border-gray-300 rounded"
                 />
             </div>
             <h1 className="text-6xl font-bold text-center my-16">All Services</h1>

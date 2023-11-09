@@ -4,9 +4,12 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { AiOutlineDollar } from "react-icons/ai";
+import ServiceCard from "./ServiceCard";
 
 const ServiceDetails = () => {
     const [service, setService] = useState({});
+    const [filter, Setfilter] = useState([]);
+
     const { user } = useContext(AuthContext);
     const { id } = useParams();
     const navigate = useNavigate();
@@ -20,6 +23,17 @@ const ServiceDetails = () => {
             .catch((error) => console.error(error));
     }, [id]);
 
+    useEffect(() => {
+        fetch(`https://nest-backend-iota.vercel.app/services`)
+            .then((res) => res.json())
+            .then((data) => {
+                const filteredData = data.filter((xyz) => xyz.provider_email === service.provider_email);
+                Setfilter(filteredData);
+            })
+            .catch((error) => console.error(error));
+    })
+
+
     const handleBooking = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -31,21 +45,21 @@ const ServiceDetails = () => {
         const area = form.area.value;
         const date = form.date.value;
         const status = "pending";
-        const newBook = { name, image, email, provider_email, price, date, area ,status};
+        const newBook = { name, image, email, provider_email, price, date, area, status };
         console.log(newBook);
 
-     fetch(`https://nest-backend-iota.vercel.app/bookings`, {
-        method: "POST",
-        headers: {
-            "content-type": "application/json",
-        },
-        body: JSON.stringify(newBook),
-     })
-        .then((res) => res.json())
-        .then((data) => {
-            console.log("SAVE TO BOOKING",data);
-            navigate("/bookings");
+        fetch(`https://nest-backend-iota.vercel.app/bookings`, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(newBook),
         })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("SAVE TO BOOKING", data);
+                navigate("/bookings");
+            })
 
         document.getElementById("my_modal_5").close();
     };
@@ -88,7 +102,7 @@ const ServiceDetails = () => {
                             </button>
                             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
-                                   
+
                                     <div className="modal-action">
                                         <form method="dialog" onSubmit={handleBooking}>
                                             <div className="flex gap-2 ">
@@ -150,6 +164,16 @@ const ServiceDetails = () => {
                             </dialog>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div>
+                <h1 className="text-6xl font-bold text-center my-16">Provider Other Services</h1>
+                <div className="grid grid-cols-1 lg:grid-cols-2 px-20 gap-4">
+                    {filter.map((service, index) => (
+                        <div key={index}>
+                            <ServiceCard service={service} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
