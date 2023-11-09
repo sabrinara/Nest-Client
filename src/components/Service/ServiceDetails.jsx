@@ -143,7 +143,7 @@ const ServiceDetails = () => {
                                             </div>
                                             {/* <input type="submit" value="Book" className="btn btn-primary" /> */}
 
-                                            <button className="btn rounded mt-4 w-full mx-6 text-white bg-blue-400 hover:bg-blue-600">Book</button>
+                                            <button className="btn rounded mt-4 w-full  text-white bg-blue-400 hover:bg-blue-600">Book</button>
                                         </form>
                                     </div>
                                 </div>

@@ -15,6 +15,7 @@ import MySchedules from '../pages/MySchedules';
 import ServiceDetails from '../components/Service/ServiceDetails';
 import AddService from '../pages/AddService';
 import UpdateService from '../pages/UpdateService';
+import Pending from '../pages/Pending';
 
 
 const routes = createBrowserRouter([
@@ -71,6 +72,10 @@ const routes = createBrowserRouter([
             {
                 path: "/servicedetails/:id",
                 element: <ServiceDetails></ServiceDetails>,
+            },
+            {
+                path: "/pending",
+                element:<Pending></Pending>
             }
           
         ]

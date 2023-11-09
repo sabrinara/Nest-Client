@@ -22,13 +22,45 @@ const ManageServices = () => {
 
 
     const handleUpdate = (serviceId) => {
-        // Handle update logic
-        
-        
+        const form = document.getElementById("updateServiceForm");
+        const formData = new FormData(form);
+    
+        fetch(`https://nest-backend-iota.vercel.app/services/${serviceId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.get("name"),
+                photo: formData.get("photo"),
+                price: formData.get("price"),
+                area: formData.get("area"),
+                description: formData.get("description"),
+            }),
+        })
+        .then(res => res.json())
+        .then(updatedService => {
+            // Update the services state with the updated service
+            const updatedServices = services.map(service =>
+                service._id === serviceId ? updatedService : service
+            );
+            setServices(updatedServices);
+    
+          
+           
+    
+       
+            Swal.fire('Updated!', 'Service has been updated.', 'success');
+        })
+        .catch((error) => {
+            console.error(error);
+         
+            Swal.fire('Error', 'Failed to update service.', 'error');
+        });
 
-        console.log(`Update service with id: ${serviceId}`);
         document.getElementById("my_modal_5").close();
     };
+    
 
     const handleDelete = (serviceId) => {
         Swal.fire({
@@ -86,7 +118,7 @@ const ManageServices = () => {
                                 <td className="py-2 px-6 text-center font-semibold">{service.name}</td>
                                 <td className="py-2 px-4 overflow-hidden">{service.description}</td>
                                 <td className="py-2 px-4 text-center">{service.area}</td>
-                                <td className="py-2 px-4 text-center">{service.price}</td>
+                                <td className="py-2 px-4 text-center">{service.price} $</td>
                                 <td className="py-2 px-4">
                                     <div>
                                         <button
@@ -99,7 +131,10 @@ const ManageServices = () => {
                                             <div className="modal-box">
 
                                                 <div className="modal-action">
-                                                    <form method="dialog" onSubmit={handleUpdate}>
+                                                    <form id="updateServiceForm" method="dialog" onSubmit={(e) => {
+                                                        e.preventDefault();
+                                                        handleUpdate(service._id);
+                                                    }}>
                                                         <div className="flex gap-2 ">
                                                             <div className="form-control">
                                                                 <label className="label">
@@ -134,7 +169,7 @@ const ManageServices = () => {
                                                                 <label className="label">
                                                                     <span className="label-text">Description</span>
                                                                 </label>
-                                                                <input type="text" name="area" className="input input-bordered" placeholder="Write Description" required />
+                                                                <input type="text" name="description" className="input input-bordered" placeholder="Write Description" required />
                                                             </div>
                                                         </div>
 

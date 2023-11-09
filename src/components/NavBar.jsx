@@ -120,12 +120,7 @@ const NavBar = ({ toggleTheme }) => {
                                                     tabIndex={0}
                                                     className="dropdown-content z-[1] menu shadow rounded w-40 bg-cyan-900 "
                                                 >
-                                                    <NavLink
-                                                        to="/manageservices"
-                                                        className="px-4 py-1 hover:bg-base-300 rounded-lg"
-                                                    >
-                                                        My Services
-                                                    </NavLink>
+                                                    
                                                     <NavLink
                                                         to="/addservice"
                                                         className="px-4 py-1 hover:bg-base-300 rounded-lg"
@@ -133,10 +128,22 @@ const NavBar = ({ toggleTheme }) => {
                                                         Add a Service
                                                     </NavLink>
                                                     <NavLink
+                                                        to="/manageservices"
+                                                        className="px-4 py-1 hover:bg-base-300 rounded-lg"
+                                                    >
+                                                        My Services
+                                                    </NavLink>
+                                                    <NavLink
                                                         to="/bookings"
                                                         className="px-4 py-1 hover:bg-base-300 rounded-lg"
                                                     >
                                                         My Sechedules
+                                                    </NavLink>
+                                                    <NavLink
+                                                        to="/pending"
+                                                        className="px-4 py-1 hover:bg-base-300 rounded-lg"
+                                                    >
+                                                        My Pendings
                                                     </NavLink>
                                                 </ul>
                                             )}
