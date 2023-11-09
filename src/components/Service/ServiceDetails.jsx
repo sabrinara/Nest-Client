@@ -2,32 +2,33 @@
 import { useEffect } from "react";
 import { useContext } from "react";
 import { useState } from "react";
-import {  useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetails = () => {
 
-    const [service, setService] = useState({});
-    const { user } = useContext(AuthContext);
-    const email = user.email;
-    console.log(user);
-    const { id } = useParams();
-    // console.log(id);
- const navigate = useNavigate();
-    useEffect(() => {
-        fetch(`https://tech-elec-shop-backend.vercel.app/products/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                // console.log(data);
-               const filteredData = data.filter((product) => product._id === id);
-               setService(filteredData[0]);
-            })
-            .catch((error) => console.error(error));
-    }, [id])
+    //     const [service, setService] = useState({});
+    //     const { user } = useContext(AuthContext);
+    //     const email = user.email;
+    //     console.log(user);
+    //     const { id } = useParams();
+    //     // console.log(id);
+    //  const navigate = useNavigate();
+    //     useEffect(() => {
+    //         fetch(`https://tech-elec-shop-backend.vercel.app/products/${id}`)
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 // console.log(data);
+    //                const filteredData = data.filter((product) => product._id === id);
+    //                setService(filteredData[0]);
+    //             })
+    //             .catch((error) => console.error(error));
+    //     }, [id])
 
-    // console.log(product)
-    const { photo, name, description, price,rating } = product || {};
+    //     // console.log(product)
+    //     const { photo, name, description, price,rating } = product || {};
 
     // const cartProduct = {
     //     photo,
@@ -65,19 +66,31 @@ const ServiceDetails = () => {
 
     return (
         <div>
-
-            <div className="m-10 text-xl">
-                <h1 className="text-3xl text-cyan-800 lg:text-5xl my-10 font-bold text-center">{name}</h1>
-                <img className="w-full md:w-[80%] md:h-[70vh]  lg:w-[80%] lg:h-[80vh] mx-auto my-auto" src={photo} alt="" />
-                <div className="my-10 lg:mx-24">
-                    <p>About:{description}</p>
-                    <br />
-                    <p>Price:{price} $</p>
-                    <button className="btn bg-sky-500 text-white w-full h-2 mt-6 hover:text-blue-900" >Add To Cart</button>
-                </div>
-                <div>
+            <Helmet>
+                <title>NEST-Details of the service</title>
+            </Helmet>
+            <div className="card card-side bg-base-100 shadow-xl my-16 mx-10 lg:mx-32 h-[60vh]">
+                <figure className="w-[50%]">
+                    <img src="https://i.ibb.co/0MTsq6b/packing.png" alt="Movie" />
+                </figure>
+                <div className="card-body w-[50%]">
+                    <h2 className="card-title">Name:</h2>
+                    <p>Description:</p>
+                    <img
+                        alt=""
+                        src="https://i.ibb.co/0MTsq6b/packing.png"
+                        className="relative inline-block h-[70px] w-[70px] lg:h-[50px] lg:w-[50px] rounded-full border-2 border-cyan-600 object-cover object-center"
+                    />
+                    <h5 className="mb-4 font-sans text-lg font-semibold ">
+                        Provider Name:
+                    </h5>
+                    <div className="card-actions justify-end">
+                        <button className="btn bg-sky-500 text-white ">Book</button>
+                    </div>
                 </div>
             </div>
+
+
         </div>
     );
 };

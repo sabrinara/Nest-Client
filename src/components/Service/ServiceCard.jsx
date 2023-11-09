@@ -5,9 +5,9 @@ const ServiceCard = ({ service }) => {
     const { id, image, name, description,price, provider_image,provider_name,service_area } = service || {}
     return (
         <div>
-            <div className="card  lg:h-[76vh] lg:card-side bg-base-100 shadow-xl m-6">
-                <figure className="w-full h-[50vh] lg:h-[76vh] lg:w-[50%]">
-                    <img className="w-full h-[50vh] lg:h-[76vh] lg:max-w-none"  src= {image} /></figure>
+            <div className="card  lg:h-[56vh] lg:card-side bg-base-100 shadow-xl m-6">
+                <figure className="w-full h-[50vh] lg:h-[56vh] lg:w-[50%]">
+                    <img className="w-full h-[50vh] lg:h-[56vh] lg:max-w-none"  src= {image} /></figure>
                 <div className="card-body lg:w-[50%]">
                     <h1 className="card-title text-3xl text-red-600">{name}.</h1>
                     <p className="text-sm overflow-hidden">{description}</p>

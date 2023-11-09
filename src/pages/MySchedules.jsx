@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useState } from "react";
 import Swal from 'sweetalert2';
 import { AuthContext } from "../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -55,8 +56,11 @@ const MySchedules = () => {
 
     }
     return (
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-4 md:mx-8 lg:mx-16 my-8">
+        <div>
+            <Helmet>
+                <title>NEST-My Schedules</title>
+            </Helmet>  
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-4 md:mx-8 lg:mx-16 my-8">
             {
                 products?.map((product) => (
                     <div key={product._id} className="card lg:h-[20rem] lg:card-side bg-base-100 shadow-xl">
@@ -76,6 +80,9 @@ const MySchedules = () => {
                 ))
             }
         </div>
+        </div>
+        
+      
     );
 };
 

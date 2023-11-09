@@ -7,6 +7,7 @@ import AboutUs from "../components/other/AboutUs";
 import { useEffect } from "react";
 import ExServices from "../components/other/ExServices";
 import FeaturedServices from "../components/Service/FeaturedServices";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
 
@@ -20,6 +21,10 @@ const Home = () => {
     }, []);
     return (
         <div>
+            <Helmet>
+                <title>NEST-Home</title>
+            </Helmet>
+            
             <Banner></Banner>
             <AboutUs></AboutUs>
             <FeaturedServices services={services}></FeaturedServices>

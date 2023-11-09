@@ -83,8 +83,8 @@ const NavBar = ({ toggleTheme }) => {
                 </div>
                 <div className="navbar-center ">
                     <Link to="/" className="flex mr-4   items-center normal-case  font-serif font-extrabold text-4xl lg:text-4xl ">
-                        <img className="w-10 h-10  mx-auto" src={Logo} alt="" />
-                        <h1 className="text-2xl mx-2"> <span className="text-4xl text-red-500">N</span>EST</h1>
+                        <img className="w-12 h-12 lg:w-16 lg:h-16  mx-auto" src={Logo} alt="" />
+                        <h1 className="text-2xl lg:text-4xl mx-2"> <span className="text-4xl lg:text-6xl text-red-500">N</span>EST</h1>
                     </Link>
 
                 </div>
@@ -127,7 +127,7 @@ const NavBar = ({ toggleTheme }) => {
                                                         My Services
                                                     </NavLink>
                                                     <NavLink
-                                                        to="/addproduct"
+                                                        to="/addservice"
                                                         className="px-4 py-1 hover:bg-base-300 rounded-lg"
                                                     >
                                                         Add a Service

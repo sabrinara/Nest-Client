@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import ServiceCard from "../components/Service/ServiceCard";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Service = () => {
@@ -15,8 +16,11 @@ const Service = () => {
 
     return (
         <div >
+            <Helmet>
+                <title>NEST-All Services</title>
+            </Helmet>
             <h1 className="text-6xl font-bold text-center my-16">All Services</h1>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 px-20 gap-4">
                 {
                     services.map((service, index) => <div key={index}>
                         <ServiceCard service={service} />
