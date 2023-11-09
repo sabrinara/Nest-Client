@@ -47,9 +47,9 @@ const Footer = () => {
             </div>
             <hr className="my-8 border-sky-400 lg:mx-24 lg:hidden" />
             <div className="grid grid-flow-col gap-6 text-blue-500 m-6 justify-center ">
-                    <a href="https://www.facebook.com/"><FaFacebook></FaFacebook></a>
-                    <a href="https://www.instagram.com/"><FaInstagram></FaInstagram></a>
-                    <a href="https://twitter.com/"><FaTwitter></FaTwitter></a>
+                    <a href="https://www.facebook.com/" ><FaFacebook className="md:w-10 md:h-10"></FaFacebook></a>
+                    <a href="https://www.instagram.com/"><FaInstagram className="md:w-10 md:h-10"></FaInstagram></a>
+                    <a href="https://twitter.com/"><FaTwitter className="md:w-10 md:h-10"></FaTwitter></a>
                 </div>
            
             <hr className="my-8 border-sky-400 lg:mx-24" />

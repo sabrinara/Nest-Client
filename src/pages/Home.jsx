@@ -14,7 +14,7 @@ const Home = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('/data.json')
+        fetch('https://nest-backend-iota.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
             .catch(error => console.error(error));

@@ -1,68 +1,54 @@
-
-import { useEffect } from "react";
-import { useContext } from "react";
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import Swal from "sweetalert2";
+import { useEffect, useContext, useState } from "react";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { HiOutlineLocationMarker } from "react-icons/hi";
+import { AiOutlineDollar } from "react-icons/ai";
 
 const ServiceDetails = () => {
+    const [service, setService] = useState({});
+    const { user } = useContext(AuthContext);
+    const { id } = useParams();
+    const navigate = useNavigate();
 
-    //     const [service, setService] = useState({});
-    //     const { user } = useContext(AuthContext);
-    //     const email = user.email;
-    //     console.log(user);
-    //     const { id } = useParams();
-    //     // console.log(id);
-    //  const navigate = useNavigate();
-    //     useEffect(() => {
-    //         fetch(`https://tech-elec-shop-backend.vercel.app/products/${id}`)
-    //             .then((res) => res.json())
-    //             .then((data) => {
-    //                 // console.log(data);
-    //                const filteredData = data.filter((product) => product._id === id);
-    //                setService(filteredData[0]);
-    //             })
-    //             .catch((error) => console.error(error));
-    //     }, [id])
+    useEffect(() => {
+        fetch(`https://nest-backend-iota.vercel.app/services/${id}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setService(data);
+            })
+            .catch((error) => console.error(error));
+    }, [id]);
 
-    //     // console.log(product)
-    //     const { photo, name, description, price,rating } = product || {};
+    const handleBooking = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const image = form.photo.value;
+        const email = form.email.value;
+        const provider_email = form.provider_email.value;
+        const price = form.price.value;
+        const area = form.area.value;
+        const date = form.date.value;
+        const status = "pending";
+        const newBook = { name, image, email, provider_email, price, date, area ,status};
+        console.log(newBook);
 
-    // const cartProduct = {
-    //     photo,
-    //     name,
-    //     description,
-    //     price,
-    //     rating,
-    //     email
-    // }
+     fetch(`https://nest-backend-iota.vercel.app/bookings`, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+        },
+        body: JSON.stringify(newBook),
+     })
+        .then((res) => res.json())
+        .then((data) => {
+            console.log("SAVE TO BOOKING",data);
+            navigate("/bookings");
+        })
 
-    // const handleAddToCart = () => {
-
-    //     fetch('https://tech-elec-shop-backend.vercel.app/carts', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(cartProduct)
-    //     })
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         // console.log(data); 
-    //         if(data.insertedId){
-    //             Swal.fire({
-    //                 title:'Success',
-    //                 text: 'Product Added into My Cart Sucessfully!',
-    //                 icon: 'success',
-    //                 confirmButtonText: 'Cool!',
-    //               })
-    //               navigate('/mycart');
-    //         }
-    //     })
-    //     console.log("here cart",cartProduct);
-    // }
+        document.getElementById("my_modal_5").close();
+    };
 
     return (
         <div>
@@ -71,26 +57,101 @@ const ServiceDetails = () => {
             </Helmet>
             <div className="card card-side bg-base-100 shadow-xl my-16 mx-10 lg:mx-32 h-[60vh]">
                 <figure className="w-[50%]">
-                    <img src="https://i.ibb.co/0MTsq6b/packing.png" alt="Movie" />
+                    <img src={service.image} alt="Service" />
                 </figure>
                 <div className="card-body w-[50%]">
-                    <h2 className="card-title">Name:</h2>
-                    <p>Description:</p>
-                    <img
-                        alt=""
-                        src="https://i.ibb.co/0MTsq6b/packing.png"
-                        className="relative inline-block h-[70px] w-[70px] lg:h-[50px] lg:w-[50px] rounded-full border-2 border-cyan-600 object-cover object-center"
-                    />
-                    <h5 className="mb-4 font-sans text-lg font-semibold ">
-                        Provider Name:
-                    </h5>
+                    <h2 className="card-title text-3xl text-red-700 font-bold">{service.name}</h2>
+                    <p>Description: {service.description}</p>
+                    <div className="flex justify-start items-center font-bold text-2xl gap-4">
+                        <img
+                            alt=""
+                            src={service.provider_image}
+                            className="relative inline-block h-[50px] w-[50px] rounded-full border-2 border-cyan-600 object-cover object-center"
+                        />
+                        <h5 className="">{service.provider_name}</h5>
+                    </div>
+                    <div className="flex justify-start items-center font-bold text-2xl">
+                        <HiOutlineLocationMarker />
+                        <h1> Location: {service.area} </h1>
+                    </div>
+                    <div className="flex justify-start items-center font-bold text-2xl">
+                        <AiOutlineDollar />
+                        <h1> Cost: {service.price}</h1>
+                    </div>
                     <div className="card-actions justify-end">
-                        <button className="btn bg-sky-500 text-white ">Book</button>
+                        <div>
+                            <button
+                                className="btn rounded bg-blue-600 text-white hover:bg-blue-500"
+                                onClick={() => document.getElementById("my_modal_5").showModal()}
+                            >
+                                Book
+                            </button>
+                            <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                <div className="modal-box">
+                                   
+                                    <div className="modal-action">
+                                        <form method="dialog" onSubmit={handleBooking}>
+                                            <div className="flex gap-2 ">
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span className="label-text">Service Name</span>
+                                                    </label>
+                                                    <input type="text" name="name" defaultValue={service.name} className="input input-bordered" />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span className="label-text">Service Image</span>
+                                                    </label>
+                                                    <input type="text" name="photo" defaultValue={service.image} className="input input-bordered" />
+                                                </div>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span className="label-text">Service Provider Email</span>
+                                                    </label>
+                                                    <input type="email" name="provider_email" defaultValue={service.provider_email} className="input input-bordered" />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span className="label-text">User Email</span>
+                                                    </label>
+                                                    <input type="email" name="email" defaultValue={user?.email} className="input input-bordered" />
+                                                </div>
+                                            </div>
+                                            <div className="flex gap-2">
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span className="label-text">Price</span>
+                                                    </label>
+                                                    <input type="text" name="price" defaultValue={service.price} className="input input-bordered" />
+                                                </div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span className="label-text">Service Date</span>
+                                                    </label>
+                                                    <input type="date" name="date" className="input input-bordered" placeholder="Date" required />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div className="form-control">
+                                                    <label className="label">
+                                                        <span className="label-text">Location</span>
+                                                    </label>
+                                                    <input type="text" name="area" className="input input-bordered" placeholder="Your Location" required />
+                                                </div>
+                                            </div>
+                                            {/* <input type="submit" value="Book" className="btn btn-primary" /> */}
+
+                                            <button className="btn rounded mt-4 w-full mx-6 text-white bg-blue-400 hover:bg-blue-600">Book</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
     );
 };

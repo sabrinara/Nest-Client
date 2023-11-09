@@ -1,44 +1,55 @@
+import { useContext } from "react";
 import Logo from "../assets/images/logo.png";
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import  { AuthContext } from "../providers/AuthProvider";
 
 const AddService = () => {
+    const { user } = useContext(AuthContext);
 
+    console.log(user);
     const navigate = useNavigate();
+
+    // const navigate = useNavigate();
     const handleAddService = (event) => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const brand_name = form.brand_name.value;
+        const name = form.name.value;     
+        const provider_name = form.provider_name.value;
+        const provider_email = form.provider_email.value;
+        const provider_image = form.provider_image.value;
         const image = form.photo.value;
         const price = parseFloat(form.price.value);
         const description = form.description.value;
-        const newService = { name, image, price, description, brand_name };
+        const area = form.area.value;
+        const newService = { name, image, price, description,area, provider_name, provider_email, provider_image };
         console.log(newService);
 
-        form.reset();
-     
-        fetch('http://localhost:5000/services', {
+        fetch('https://nest-backend-iota.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newService)
         })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: 'Success',
-                        text: 'Service Added Sucessfully!',
-                        icon: 'success',
-                        confirmButtonText: 'Cool!',
-                    })
-                    navigate('/');
-                }
-            })
+        .then (res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    title:'Success',
+                    text: 'Product Added into My Cart Sucessfully!',
+                    icon: 'success',
+                    confirmButtonText: 'Cool!',
+                  })
+                  navigate('/service');
+            }
+        })
+
+        form.reset();
+     
+        
     }
 
     return (
@@ -64,32 +75,33 @@ const AddService = () => {
                                 <label className="label">
                                     <span className="label-text">Service Image</span>
                                 </label>
-                                <input type="text" name="image" placeholder="PhotoUrl" className="input input-bordered" required />
+                                <input type="text" name="photo" placeholder="PhotoUrl" className="input input-bordered" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Service Name</span>
                                 </label>
-                                <input type="name" placeholder="Provider name" className="input input-bordered" name='name' required />
+                                <input type="name"name='name' placeholder="Service name" className="input input-bordered"  required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Service Provider Name</span>
                                 </label>
-                                <input type="name" placeholder="Service name" className="input input-bordered" name='name' required />
+                                <input type="name" 
+                                className="input input-bordered" name='provider_name' value={user?.displayName} />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Service Provider Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="Provider email" className="input input-bordered" required />
+                                <input type="email" name="provider_email" placeholder="Provider email" value={user?.email} className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Service Provider Avater</span>
                                 </label>
-                                <input type="text" name="image" placeholder="Avatar" className="input input-bordered" required />
+                                <input type="text" name="provider_image" placeholder="Avatar" value={user?.photoURL} className="input input-bordered" required />
                             </div>
                           
                             <div className="form-control">
@@ -102,7 +114,7 @@ const AddService = () => {
                                 <label className="label">
                                     <span className="label-text">Service Area</span>
                                 </label>
-                                <input type="text" name='price' placeholder="Service Area" className="input input-bordered" required />
+                                <input type="text" name='area' placeholder="Service Area" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">

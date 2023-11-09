@@ -8,18 +8,19 @@ import { Helmet } from "react-helmet-async";
 
 
 const MySchedules = () => {
-    const {user} = useContext(AuthContext);
-    const [products, setProducts] = useState([]);
+    const { user } = useContext(AuthContext);
+    const [services, setservices] = useState([]); 
+    
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings`)
+        fetch(`https://nest-backend-iota.vercel.app/bookings`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
                 // filter data by email address
                 const filteredData = data.filter(
-                    (product) => product.email === user.email
+                    (service) => service.email === user.email
                 )
-                setProducts(filteredData);
+                setservices(filteredData);
             })
             .catch((error) => console.error(error));
     }, []);
@@ -46,8 +47,8 @@ const MySchedules = () => {
                                 'Your file has been deleted.',
                                 'success'
                             )
-                            const remaining = products.filter((product) => product._id !== id);
-                            setProducts(remaining);
+                            const remaining = services.filter((service) => service._id !== id);
+                            setservices(remaining);
                         }
                     })
                     .catch((error) => console.error(error));
@@ -59,30 +60,31 @@ const MySchedules = () => {
         <div>
             <Helmet>
                 <title>NEST-My Schedules</title>
-            </Helmet>  
+            </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-4 md:mx-8 lg:mx-16 my-8">
-            {
-                products?.map((product) => (
-                    <div key={product._id} className="card lg:h-[20rem] lg:card-side bg-base-100 shadow-xl">
-                    <figure className=" lg:w-[50%]" >
-                        <img src={product.photo} className="w-full h-96 md:h-64 lg:h-full lg:object-center " alt="Album" />
-                    </figure>
-                    <div className="card-body lg:w-[50%] md:mt-10 md:mb-10">
-                        <h2 className="card-title text-2xl">{product.name}</h2>
-                        <p className=" text-xl">{product.type}</p> 
-                        <p className="text-cyan-900 font-bold text-xl">Price: {product.price} $</p>
-                        <div className="card-actions justify-start ">
-                            <button className="py-2 px-4 text-sm  rounded bg-sky-600 text-white hover:bg-cyan-500 hover:text-white ml-2"onClick={() => handleDelete(product._id)}>Delete</button>
+                {
+                    services?.map((service) => (
+                        <div key={service._id} className="card lg:h-[20rem] lg:card-side bg-base-100 shadow-xl">
+                            <figure className=" lg:w-[50%]" >
+                                <img src={service.image} className="w-full h-96 md:h-64 lg:h-full lg:object-center " alt="Album" />
+                            </figure>
+                            <div className="card-body lg:w-[50%] md:mt-10 md:mb-10">
+                                <h2 className="card-title text-2xl">{service.name}</h2>
+                                <p className=" text-xl">{service.type}</p>
+                                <p className="text-cyan-900 font-bold text-xl">Price: {service.price} $</p>
+                                <div className="card-actions justify-between ">
+                                    <button className="py-2 px-4 text-sm  rounded bg-sky-600 text-white hover:bg-cyan-500 hover:text-white ml-2" onClick={() => handleDelete(service._id)}>Delete</button>
+                                  
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                      
-                ))
-            }
+
+                    ))
+                }
+            </div>
         </div>
-        </div>
-        
-      
+
+
     );
 };
 

@@ -26,7 +26,7 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () =>  fetch('/data.json')
+                loader: () =>  fetch('https://nest-backend-iota.vercel.app/services')
             },
             {
                 path: '/about',

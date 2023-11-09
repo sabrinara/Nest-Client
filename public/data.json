@@ -1,62 +1,68 @@
 [
   {
-    "id": 1,
+    
     "image": "https://i.ibb.co/pRFcHVk/1.jpg",
     "name": "Moving Your House",
     "description": "This service is perfect for those who are planning to move their house. The service includes packing, loading, unloading, and unpacking your belongings. The service provider will ensure that your belongings are transported safely and securely to your new home.",
     "provider_image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80",
     "provider_name": "Provider 1",
-    "service_area": "Gulsan",
+    "provider_email":"sara@gmail.com",
+    "area": "Gulsan",
     "price": 100
   },
   {
-    "id": 2,
+    
     "image": "https://i.ibb.co/zxJ62kc/a.jpg",
     "name": "Moving Offices",
     "description": "This service is designed for businesses that are planning to move their office. The service includes packing, loading, unloading, and unpacking your office equipment and furniture. The service provider will ensure that your office equipment and furniture are transported safely and securely to your new location.",
     "provider_image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80",
     "provider_name": "Provider 2",
-    "service_area": "Azimpur",
+    "provider_email":"sara@gmail.com",
+    "area": "Azimpur",
     "price": 200
   },
   {
-    "id": 3,
+    
     "image": "https://i.ibb.co/GnSRsc0/s2.jpg",
     "name": "Interior Decore",
     "description": "This service is perfect for those who want to give their home a new look. The service provider will help you choose the right colors, furniture, and accessories to create a beautiful and comfortable living space. They will work with you to create a design that reflects your personal style and taste.",
     "provider_image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80",
     "provider_name": "Provider 3",
-    "service_area": "Mohammedpur",
+    "provider_email":"sara@gmail.com",
+    "area": "Mohammedpur",
     "price": 300
   },
   {
-    "id": 4,
+    
     "image": "https://i.ibb.co/wLFnDyH/house-shifting.png",
     "name": "Furniture Moving",
     "description": "This service is designed for those who need to move their furniture from one location to another. The service provider will ensure that your furniture is transported safely and securely to your new location. They will also help you with the assembly and disassembly of your furniture.",
     "provider_image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80",
     "provider_name": "Provider 4",
-    "service_area": "Uttora",
+    "provider_email":"saashid18@gmail.com",
+    "area": "Uttora",
     "price": 400
   },
   {
-    "id": 5,
+    
     "image": "https://i.ibb.co/9b3s860/gardening.jpg",
     "name": "Gardening",
     "description": "This service is perfect for those who want to maintain a beautiful garden but don't have the time or expertise to do it themselves. The service provider will help you with everything from planting and pruning to weeding and watering. They will work with you to create a garden that is beautiful and easy to maintain.",
     "provider_image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80",
     "provider_name": "Provider 5",
-    "service_area": "Mirpur",
+    "provider_email":"saashid18@gmail.com",
+    "area": "Mirpur",
     "price": 500
   },
   {
-    "id": 6,
+    
     "image": "https://i.ibb.co/D5MCLfr/c.jpg",
     "name": "Cleaning",
     "description": "This service is designed for those who want to keep their home or office clean and tidy. The service provider will help you with everything from dusting and vacuuming to mopping and scrubbing. They will work with you to create a cleaning schedule that meets your needs and budget.",
     "provider_image": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80",
     "provider_name": "Provider 6",
-    "service_area": "Dhanmondhi",
+    "provider_email":"saashid18@gmail.com",
+    "area": "Dhanmondhi",
     "price": 600
   }
 ]

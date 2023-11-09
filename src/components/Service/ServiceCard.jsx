@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const ServiceCard = ({ service }) => {
-    const { id, image, name, description,price, provider_image,provider_name,service_area } = service || {}
+    const { _id, image, name, description,price, provider_image,provider_name,area } = service || {}
     return (
         <div>
             <div className="card  lg:h-[56vh] lg:card-side bg-base-100 shadow-xl m-6">
@@ -23,7 +23,7 @@ const ServiceCard = ({ service }) => {
                             </h5>
                         </div>
                     <div className="card-actions justify-center lg:justify-start">
-                       <Link to={'/servicedetails'}> <button className="lg:mt-2 px-4 py-2 rounded bg-sky-600 hover:bg-sky-500 text-white  hover:text-white">Explore More</button></Link>
+                       <Link to={`/servicedetails/${_id}`}> <button className="lg:mt-2 px-4 py-2 rounded bg-sky-600 hover:bg-sky-500 text-white  hover:text-white">View Details</button></Link>
                     </div>
                 </div>
             </div>

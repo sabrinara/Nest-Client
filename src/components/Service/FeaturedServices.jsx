@@ -4,7 +4,7 @@ import ServiceCard from "./ServiceCard";
 
 const FeaturedServices = ({ services }) => {
     // console.log(services)
-    const serviceId = 2
+    
 
     return (
         <div>
@@ -26,12 +26,7 @@ const FeaturedServices = ({ services }) => {
                     <button className="btn bg-sky-600 hover:bg-sky-500 text-white rounded">Veiw All Services</button>
                 </Link>
             </div>
-            <div>
-                <Link to={`/servicedetails/${serviceId}`}>
-                    <button className="btn btn-primary">Service Details</button>
-                </Link>
-
-            </div>
+           
         </div>
 
     );
