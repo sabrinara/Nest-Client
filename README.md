@@ -1,6 +1,6 @@
  # NEST 
 
- ## Live link: https://nest-9d219.web.app
+ ## Live link: https://singular-paletas-701aa7.netlify.app/
  ## Features:
 - The visitor can explore services.
 - Login user can exprore service detais and all services.

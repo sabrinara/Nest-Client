@@ -1,10 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 
 const Pending = () => {
     const { user } = useContext(AuthContext);
     const user_email = user?.email;
+    const navigation = useNavigate();
 
     const [services, setServices] = useState([]);
 
@@ -28,6 +31,7 @@ const Pending = () => {
                 user._id === serviceId? { ...user, status: newStatus } : user
             );
             setServices(updatedUsers);
+            navigation('/')
         } catch (error) {
             console.error(error);
         }
@@ -37,6 +41,9 @@ const Pending = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>NEST-My Pending</title>
+            </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-4 md:mx-8 lg:mx-16 my-8">
                 {services?.map((service) => (
                     <div key={service._id} className="card lg:h-[20rem] lg:card-side bg-base-100 shadow-xl">

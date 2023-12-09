@@ -45,10 +45,6 @@ const ManageServices = () => {
                 service._id === serviceId ? updatedService : service
             );
             setServices(updatedServices);
-    
-          
-           
-    
        
             Swal.fire('Updated!', 'Service has been updated.', 'success');
         })
@@ -140,13 +136,13 @@ const ManageServices = () => {
                                                                 <label className="label">
                                                                     <span className="label-text">Service Name</span>
                                                                 </label>
-                                                                <input type="text" name="name" className="input input-bordered" placeholder="Service Name" required />
+                                                                <input type="text" name="name" className="input input-bordered" placeholder="Service Name"  defaultValue={service.name} required />
                                                             </div>
                                                             <div className="form-control">
                                                                 <label className="label">
                                                                     <span className="label-text">Service Image</span>
                                                                 </label>
-                                                                <input type="text" name="photo" className="input input-bordered" placeholder="Service Photo" required />
+                                                                <input type="text" name="photo" className="input input-bordered" placeholder="Service Photo" defaultValue={service.image} required />
                                                             </div>
                                                         </div>
 
@@ -155,13 +151,13 @@ const ManageServices = () => {
                                                                 <label className="label">
                                                                     <span className="label-text">Price</span>
                                                                 </label>
-                                                                <input type="text" name="price" className="input input-bordered " placeholder="Service Price" required />
+                                                                <input type="text" name="price" className="input input-bordered " placeholder="Service Price" defaultValue={service.price} required />
                                                             </div>
                                                             <div className="form-control">
                                                                 <label className="label">
                                                                     <span className="label-text">Area</span>
                                                                 </label>
-                                                                <input type="text" name="area" className="input input-bordered" placeholder="Service Area" required />
+                                                                <input type="text" name="area" className="input input-bordered" placeholder="Service Area" defaultValue={service.area} required />
                                                             </div>
                                                         </div>
                                                         <div>
@@ -169,7 +165,7 @@ const ManageServices = () => {
                                                                 <label className="label">
                                                                     <span className="label-text">Description</span>
                                                                 </label>
-                                                                <input type="text" name="description" className="input input-bordered" placeholder="Write Description" required />
+                                                                <input type="text" name="description" className="input input-bordered" placeholder="Write Description" defaultValue={service.description} required />
                                                             </div>
                                                         </div>
 

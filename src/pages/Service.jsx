@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import ServiceCard from "../components/Service/ServiceCard";
 import { Helmet } from "react-helmet-async";
 
@@ -23,13 +23,13 @@ const Service = () => {
             <Helmet>
                 <title>NEST-All Services</title>
             </Helmet>
-            <div className="mb-8 ">
+            <div className="flex justify-center items-center m-20  text-2xl">
                 <input
                     type="text"
-                    placeholder="Search by service name"
+                    placeholder="Search by Service Name"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="p-2  border border-gray-300 rounded"
+                    className="px-20 py-10   border border-gray-300 rounded"
                 />
             </div>
             <h1 className="text-6xl font-bold text-center my-16">All Services</h1>

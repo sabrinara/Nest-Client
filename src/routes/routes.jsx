@@ -6,7 +6,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import PrivateRouters from './PrivateRoutes';
-import UpdateProduct from '../pages/UpdateService';
+
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Service from '../pages/Service';
@@ -31,12 +31,12 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About></About>,
+                element: <PrivateRouters><About></About></PrivateRouters>,
                 
             },
             {
                 path: '/contact',
-                element: <Contact></Contact>,
+                element: <PrivateRouters><Contact></Contact></PrivateRouters>,
             
             },
             {
@@ -71,11 +71,11 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/servicedetails/:id",
-                element: <ServiceDetails></ServiceDetails>,
+                element: <PrivateRouters><ServiceDetails></ServiceDetails></PrivateRouters>,
             },
             {
                 path: "/pending",
-                element:<Pending></Pending>
+                element:<PrivateRouters><Pending></Pending></PrivateRouters>
             }
           
         ]

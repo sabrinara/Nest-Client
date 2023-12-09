@@ -69,7 +69,7 @@ const ServiceDetails = () => {
             <Helmet>
                 <title>NEST-Details of the service</title>
             </Helmet>
-            <div className="card card-side bg-base-100 shadow-xl my-16 mx-10 lg:mx-32 h-[60vh]">
+            <div className="card card-side bg-base-100 shadow-xl my-16 mx-10 lg:mx-32 h-[66vh]">
                 <figure className="w-[50%]">
                     <img src={service.image} alt="Service" />
                 </figure>
@@ -95,7 +95,7 @@ const ServiceDetails = () => {
                     <div className="card-actions justify-end">
                         <div>
                             <button
-                                className="btn rounded bg-blue-600 text-white hover:bg-blue-500"
+                                className="btn rounded mb-6 bg-blue-600 text-white hover:bg-blue-500"
                                 onClick={() => document.getElementById("my_modal_5").showModal()}
                             >
                                 Book
