@@ -13,7 +13,7 @@ const Footer = () => {
                 <ul className="flex flex-col lg:flex-row flex-wrap items-center gap-y-2 gap-x-8 lg:mr-32">
                     <li>
                         <a
-                            href="/about"
+                            href="/about" 
                             className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-cyan-800 focus:text-cyan-800"
                         >
                             About Us
@@ -54,10 +54,10 @@ const Footer = () => {
                 </ul>
             </div>
             <hr className="my-8 border-sky-400 lg:mx-24 lg:hidden" />
-            <div className="grid grid-flow-col gap-6 text-blue-500 m-6 justify-center ">
-                    <a href="https://www.facebook.com/" ><FaFacebook className="md:w-10 md:h-10"></FaFacebook></a>
-                    <a href="https://www.instagram.com/"><FaInstagram className="md:w-10 md:h-10"></FaInstagram></a>
-                    <a href="https://twitter.com/"><FaTwitter className="md:w-10 md:h-10"></FaTwitter></a>
+            <div className="grid grid-flow-col gap-6 text-blue-500 m-6 justify-center " target="blank">
+                    <a rel="noopener noreferrer" href="https://www.facebook.com/" target="_blank" ><FaFacebook className="md:w-8 md:h-8 "></FaFacebook></a>
+                    <a rel="noopener noreferrer" href="https://www.instagram.com/" target="_blank"><FaInstagram className="md:w-8 md:h-8" ></FaInstagram></a>
+                    <a rel="noopener noreferrer" href="https://twitter.com/" target="_blank"><FaTwitter className="md:w-8 md:h-8" ></FaTwitter></a>
                 </div>
            
             <hr className="my-8 border-sky-400 lg:mx-24" />
