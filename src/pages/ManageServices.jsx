@@ -96,10 +96,11 @@ const ManageServices = () => {
                 <title>NEST-Manage Services</title>
             </Helmet>
             <div>
-                <h1 className="text-7xl font-bold my-16 text-center">Manage Services</h1>
+                <h1 className="text-5xlmd:text-7xl font-bold my-16 text-center">Manage Services</h1>
+                <div className="overflow-x-auto">
                 <table className="min-w-full border border-sky-400 ">
                     <thead>
-                        <tr className="bg-gray-100">
+                        <tr className="bg-sky-100 text-cyan-900">
                             <th className="py-2 px-4 border-b">Name</th>
                             <th className="py-2 px-4 border-b">Description</th>
                             <th className="py-2 px-4 border-b">Area</th>
@@ -124,7 +125,7 @@ const ManageServices = () => {
                                             Update
                                         </button>
                                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-                                            <div className="modal-box">
+                                            <div className="modal-box px-6 md:px-10">
 
                                                 <div className="modal-action">
                                                     <form id="updateServiceForm" method="dialog" onSubmit={(e) => {
@@ -170,7 +171,7 @@ const ManageServices = () => {
                                                         </div>
 
 
-                                                        <button className="btn rounded mt-4 w-full text-white bg-blue-400 hover:bg-blue-600">Update</button>
+                                                        <button className="btn rounded mt-4 w-full text-white bg-blue-500 hover:bg-blue-700">Update</button>
                                                     </form>
                                                 </div>
                                             </div>
@@ -184,6 +185,7 @@ const ManageServices = () => {
                         ))}
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
     );
