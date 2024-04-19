@@ -1,6 +1,6 @@
  # NEST 
 
- ## Live link: https://nest-service-sharing.netlify.app/
+ ## Live link: https://nest-service-sharing.netlify.app
  ## Features:
 - The visitor can explore services.
 - Login user can exprore service detais and all services.
