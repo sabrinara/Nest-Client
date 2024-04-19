@@ -3,7 +3,7 @@
 const AboutUs = () => {
     return (
         <div className=" lg:px-40 lg:py-20">
-            <h1 className="text-5xl font-bold text-center mt-16 lg:mt-0  mb-16">About Us</h1>
+            <h1 className="text-5xl font-bold text-center text-cyan-600 mt-16 lg:mt-0  mb-16">About Us</h1>
             <div className="card card-side bg-white text-cyan-900  shadow-xl mb-8 h-[46vh] lg:h-[80vh] mx-16">
                 <figure className="w-2/3">
                     <img src={"https://i.ibb.co/3WP2xvR/heavy-box.png"}  />
