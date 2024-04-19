@@ -49,6 +49,7 @@ const Register = () => {
             .then((result) => {
                 console.log(result.user)
                 toast('Successfully Login');
+                navigate('/');
 
             })
             .catch(error => {

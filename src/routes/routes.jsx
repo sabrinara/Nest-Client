@@ -16,6 +16,7 @@ import ServiceDetails from '../components/Service/ServiceDetails';
 import AddService from '../pages/AddService';
 import UpdateService from '../pages/UpdateService';
 import Pending from '../pages/Pending';
+import Profile from '../components/Profile';
 
 
 const routes = createBrowserRouter([
@@ -59,6 +60,10 @@ const routes = createBrowserRouter([
             {
                 path:"/bookings",
                 element:<PrivateRouters><MySchedules></MySchedules> </PrivateRouters>
+            },
+            {
+                path:"/profile",
+                element:<PrivateRouters><Profile></Profile></PrivateRouters>
             },
             {
                 path:"/manageservices",

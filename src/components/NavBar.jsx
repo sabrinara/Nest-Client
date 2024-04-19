@@ -103,7 +103,7 @@ const NavBar = ({ toggleTheme }) => {
                                     </label>
                                     <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content rounded w-32  bg-cyan-900 text-white">
                                         <li>
-                                            <a className="justify-between hover:bg-cyan-900 hover:text-white  focus:text-white ">
+                                            <a className="justify-between hover:bg-cyan-900 hover:text-white  focus:text-white " href="/profile">
                                                 {user.displayName}
                                             </a>
                                         </li>
