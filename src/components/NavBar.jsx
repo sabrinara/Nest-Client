@@ -42,7 +42,7 @@ const NavBar = ({ toggleTheme }) => {
                         <NavLink to="/about">About</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact">Contact Us</NavLink>
+                        <NavLink to="/contact">Contact</NavLink>
                     </li>
 
                     <li>

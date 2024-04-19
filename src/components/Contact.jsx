@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
-
+import Ex from "../../public/contact.json";
+import Lottie from "lottie-react";
 const Contact = () => {
     // Step 1: Define state variables for form fields
     const [name, setName] = useState("");
@@ -42,9 +43,14 @@ const Contact = () => {
                 <title>NEST- Contact</title>
             </Helmet>
             <div className="flex  items-center justify-center">
-                <h1 className="text-7xl font-bold my-10 ">Contact Us</h1>
+                <h1 className="text-5xl font-bold text-sky-600 my-10 ">Contact Us</h1>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center">
+                <div className="hidden md:flex md:w-1/2 mt-16 md:mt-1">
+                    <Lottie animationData={Ex} loop={true} />
                 </div>
-                <div className="max-w-xl mx-auto">
+                <div className="w-full md:w-1/2 mx-auto">
                     <form className="card-body" onSubmit={handleSubmit}>
 
                         <div className="form-control">
@@ -58,7 +64,7 @@ const Contact = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">Phone:</label>
-                            <input type="email" id="email" className="input input-bordered" value={phone} onChange={handlePhoneChange} required />
+                            <input type="number" id="phone" className="input input-bordered" value={phone} onChange={handlePhoneChange} required />
                         </div>
 
                         <div className="form-control">
@@ -70,8 +76,8 @@ const Contact = () => {
                         <button className="btn mt-10 rounded text-white hover:bg-sky-600 bg-sky-400" type="submit">Submit</button>
                     </form>
                 </div>
-
             </div>
+        </div>
 
     );
 };
