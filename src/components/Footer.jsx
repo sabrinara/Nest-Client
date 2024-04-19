@@ -13,13 +13,13 @@ const Footer = () => {
                 <ul className="flex flex-col lg:flex-row flex-wrap items-center gap-y-2 gap-x-8 lg:mr-32">
                     <li>
                         <a
-                            href="#"
+                            href="/about"
                             className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-cyan-800 focus:text-cyan-800"
                         >
                             About Us
                         </a>
                     </li>
-                    <li>
+                    {/* <li>
                         <a
                             href="#"
                             className="block font-sans text-base font-normal leading-relaxed antialiased transition-colors hover:text-cyan-800 focus:text-cyan-800"
@@ -34,13 +34,21 @@ const Footer = () => {
                         >
                             Contribute
                         </a>
-                    </li>
+                    </li> */}
                     <li>
                         <a
-                            href="#"
+                            href="/contact"
                             className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-cyan-800 focus:text-cyan-800"
                         >
                             Contact Us
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/service"
+                            className="block font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased transition-colors hover:text-cyan-800 focus:text-cyan-800"
+                        >
+                            Services
                         </a>
                     </li>
                 </ul>
