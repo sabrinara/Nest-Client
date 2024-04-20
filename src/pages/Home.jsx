@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import ExServices from "../components/other/ExServices";
 import FeaturedServices from "../components/Service/FeaturedServices";
 import { Helmet } from "react-helmet-async";
+import BannerNew from "./BannerNew";
 
 const Home = () => {
 
@@ -24,7 +25,7 @@ const Home = () => {
             <Helmet>
                 <title>NEST-Home</title>
             </Helmet>
-            
+            <BannerNew></BannerNew>
             <Banner></Banner>
             <AboutUs></AboutUs>
             <FeaturedServices services={services}></FeaturedServices>
