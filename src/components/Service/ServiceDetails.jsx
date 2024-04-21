@@ -69,14 +69,14 @@ const ServiceDetails = () => {
             <Helmet>
                 <title>NEST-Details of the service</title>
             </Helmet>
-            <div className="card card-side bg-base-100 shadow-xl my-16 mx-10 lg:mx-32 h-[66vh]">
-                <figure className="w-[50%]">
-                    <img src={service.image} alt="Service" />
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-blue-100 shadow-xl my-16 mx-10 rounded ">
+                <figure className="w-full md:w-1/2">
+                    <img src={service.image} className="w-full h-[100vh] rounded" alt="Service" />
                 </figure>
-                <div className="card-body w-[50%]">
-                    <h2 className="card-title text-3xl text-red-700 font-bold">{service.name}</h2>
-                    <p>Description: {service.description}</p>
-                    <div className="flex justify-start items-center font-bold text-2xl gap-4">
+                <div className="w-full md:w-1/2 px-10">
+                    <h2 className=" text-3xl text-red-700 font-bold ">{service.name}</h2>
+                    <p className=""> {service.description}</p>
+                    <div className="flex justify-start items-center font-bold text-2xl md:py-4 gap-4">
                         <img
                             alt=""
                             src={service.provider_image}
@@ -84,15 +84,15 @@ const ServiceDetails = () => {
                         />
                         <h5 className="">{service.provider_name}</h5>
                     </div>
-                    <div className="flex justify-start items-center font-bold text-2xl">
-                        <HiOutlineLocationMarker />
-                        <h1> Location: {service.area} </h1>
+                    <div className="flex justify-start items-center font-bold text-2xl  md:py-4">
+                        <HiOutlineLocationMarker className="text-sky-700" />
+                        <h1><span className="text-sky-700">Location:</span>  {service.area} </h1>
                     </div>
-                    <div className="flex justify-start items-center font-bold text-2xl">
-                        <AiOutlineDollar />
-                        <h1> Cost: {service.price}</h1>
+                    <div className="flex justify-start items-center font-bold text-2xl md:py-4">
+                        <AiOutlineDollar className="text-sky-700" />
+                        <h1><span className="text-sky-700">Cost:</span>  {service.price}</h1>
                     </div>
-                    <div className="card-actions justify-end">
+                    <div className=" justify-end">
                         <div>
                             <button
                                 className="btn rounded mb-6 bg-blue-600 text-white hover:bg-blue-500"
@@ -103,7 +103,7 @@ const ServiceDetails = () => {
                             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
 
-                                    <div className="modal-action">
+                                    <div className="modal-action mx-4">
                                         <form method="dialog" onSubmit={handleBooking}>
                                             <div className="flex gap-2 ">
                                                 <div className="form-control">
