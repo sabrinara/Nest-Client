@@ -1,5 +1,5 @@
 import { useEffect, useContext, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineLocationMarker } from "react-icons/hi";

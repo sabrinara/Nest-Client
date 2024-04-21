@@ -1,7 +1,7 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ServiceCard from "../components/Service/ServiceCard";
 import { Helmet } from "react-helmet-async";
-
+import { BiSearchAlt } from "react-icons/bi";
 const Service = () => {
     const [services, setServices] = useState([]);
     const [showAll, setShowAll] = useState(false);
@@ -23,16 +23,24 @@ const Service = () => {
             <Helmet>
                 <title>NEST-All Services</title>
             </Helmet>
-            <div className="flex justify-center items-center m-20  text-2xl">
-                <input
-                    type="text"
-                    placeholder="Search by Service Name"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="px-20 py-10   border border-gray-300 rounded"
-                />
+
+            <h1 className="text-5xl font-bold text-center text-sky-600 mt-20 ">All Services</h1>
+
+            <div className="flex justify-center my-10 mx-10">
+                <div className="relative">
+                    <input
+                        type="text"
+                        placeholder="Write Service Name"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="py-2 pl-4 bg-sky-100 text-center border border-sky-300 rounded"
+                    />
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-4 ">
+                        <BiSearchAlt className="text-sky-600" />
+                    </div>
+                </div>
             </div>
-            <h1 className="text-6xl font-bold text-center my-16">All Services</h1>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 px-20 gap-4">
                 {filteredServices.map((service, index) => (
                     <div key={index}>

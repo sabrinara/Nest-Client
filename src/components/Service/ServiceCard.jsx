@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 
 const ServiceCard = ({ service }) => {
-    const { _id, image, name, description,price, provider_image,provider_name,area } = service || {}
+    const { _id, image, name, description,price, provider_image,provider_name, area } = service || {}
     return (
         <div>
-            <div className="card  lg:h-[56vh] lg:card-side bg-base-100 shadow-xl">
+            <div className="card  lg:h-[56vh] lg:card-side bg-base-100 shadow-xl md:m-6">
                 <figure className="w-full h-[50vh] lg:h-[56vh] lg:w-[50%]">
                     <img className="w-full h-[50vh] lg:h-[56vh] lg:max-w-none"  src= {image} /></figure>
                 <div className="card-body lg:w-[50%]">
@@ -18,7 +18,7 @@ const ServiceCard = ({ service }) => {
                                 src={provider_image}
                                 className="relative inline-block h-[70px] w-[70px] lg:h-[50px] lg:w-[50px] rounded-full border-2 border-cyan-600 object-cover object-center"
                             />
-                             <h5 className="mb-4 font-sans text-lg font-semibold ">
+                             <h5 className="mb-2 font-sans text-lg font-semibold ">
                                 {provider_name}
                             </h5>
                         </div>
