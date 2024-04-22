@@ -105,7 +105,7 @@ const ServiceDetails = () => {
 
                                     <div className="modal-action mx-4">
                                         <form method="dialog" onSubmit={handleBooking}>
-                                            <div className="flex gap-2 ">
+                                            {/* <div className="flex gap-2 ">
                                                 <div className="form-control">
                                                     <label className="label">
                                                         <span className="label-text">Service Name</span>
@@ -118,31 +118,31 @@ const ServiceDetails = () => {
                                                     </label>
                                                     <input type="text" name="photo" defaultValue={service.image} className="input input-bordered" />
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             <div className="flex gap-2">
                                                 <div className="form-control">
                                                     <label className="label">
                                                         <span className="label-text">Service Provider Email</span>
                                                     </label>
-                                                    <input type="email" name="provider_email" defaultValue={service.provider_email} className="input input-bordered" />
+                                                    <input type="email" name="provider_email" value={service.provider_email} className="input input-bordered" />
                                                 </div>
                                                 <div className="form-control">
                                                     <label className="label">
-                                                        <span className="label-text">User Email</span>
+                                                        <span className="label-text">Your Email</span>
                                                     </label>
-                                                    <input type="email" name="email" defaultValue={user?.email} className="input input-bordered" />
+                                                    <input type="email" name="email" value={user?.email} className="input input-bordered" />
                                                 </div>
                                             </div>
                                             <div className="flex gap-2">
-                                                <div className="form-control">
+                                                {/* <div className="form-control">
                                                     <label className="label">
                                                         <span className="label-text">Price</span>
                                                     </label>
                                                     <input type="text" name="price" defaultValue={service.price} className="input input-bordered" />
-                                                </div>
+                                                </div> */}
                                                 <div className="form-control">
                                                     <label className="label">
-                                                        <span className="label-text">Service Date</span>
+                                                        <span className="label-text">Service Taking Date</span>
                                                     </label>
                                                     <input type="date" name="date" className="input input-bordered" placeholder="Date" required />
                                                 </div>
@@ -150,7 +150,7 @@ const ServiceDetails = () => {
                                             <div>
                                                 <div className="form-control">
                                                     <label className="label">
-                                                        <span className="label-text">Location</span>
+                                                        <span className="label-text">Your Location</span>
                                                     </label>
                                                     <input type="text" name="area" className="input input-bordered" placeholder="Your Location" required />
                                                 </div>
