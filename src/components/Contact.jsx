@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Ex from "../../public/contact.json";
 import Lottie from "lottie-react";
+import { ToastContainer, toast } from "react-toastify";
 const Contact = () => {
     // Step 1: Define state variables for form fields
     const [name, setName] = useState("");
@@ -27,14 +28,12 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Step 3: Handle form submission (you can add your logic here)
         console.log("Form submitted:", { name, email, message });
-
-        // Step 4: Optionally, you can reset the form fields
         setName("");
         setEmail("");
         setPhone("");
         setMessage("");
+        toast.success('Message submitted successfully!');
     };
 
     return (
@@ -69,7 +68,7 @@ const Contact = () => {
 
                         <div className="form-control">
                             <label className="label">Message:</label>
-                            <textarea id="message" value={message} onChange={handleMessageChange} required />
+                            <textarea id="message" value={message} className="input input-bordered"  onChange={handleMessageChange} required />
                         </div>
 
 
@@ -77,6 +76,16 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
+            <ToastContainer position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="colored" />
         </div>
 
     );
