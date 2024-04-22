@@ -62,7 +62,7 @@ const Footer = () => {
            
             <hr className="my-8 border-sky-400 lg:mx-24" />
             <p className="block text-center font-sans text-base font-normal leading-relaxed text-blue-gray-900 antialiased">
-                © 2023, N<small>EST -Service Sharing Website</small><br /> <small> @Sabrina Rashid</small>
+                © 2024, N<small>EST -Service Sharing Website</small><br /> <small> @Sabrina Rashid</small>
             </p>
         
 </footer >

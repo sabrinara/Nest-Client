@@ -11,6 +11,8 @@ import { Helmet } from "react-helmet-async";
 import BannerNew from "./BannerNew";
 import Contact from "../components/Contact";
 import Providers from "../components/Providers";
+import NewsSletter from "./NewsSletter";
+import PopularService from "../components/PopularService";
 
 const Home = () => {
 
@@ -31,10 +33,11 @@ const Home = () => {
             {/* <Banner></Banner> */}
             <AboutUs></AboutUs>
             <Providers services={services}></Providers>
-            <FeaturedServices services={services}></FeaturedServices>
-           
+            <PopularService></PopularService>
+            <FeaturedServices services={services}></FeaturedServices>    
             <ClientReview></ClientReview>
             <ExServices></ExServices>
+            <NewsSletter></NewsSletter>
             <Contact></Contact>
         </div>
     );

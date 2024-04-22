@@ -6,7 +6,7 @@ const Providers = ({ services }) => {
 
     return (
         <div className=" mb-16">
-            <h1 className="text-3xl md:text-6xl font-bold text-center my-16 text-cyan-600">Service Providers</h1>
+            <h1 className="text-3xl md:text-5xl font-bold text-center my-16 text-cyan-600">Service Providers</h1>
             <Marquee speed={100} className="">
                 {services.map((service) => {
                     // Check if the email is already encountered, if so, skip rendering

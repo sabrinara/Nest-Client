@@ -31,7 +31,7 @@ const ClientReview = () => {
             <div className="w-full h-[6px] my-2"></div>
             <div className="py-12 text-center">
                 <div className="container mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-bold text-cyan-600  my-10">Clients Thoughts</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold text-cyan-600  my-10">Clients Thoughts</h2>
                    
                         <div className="flex justify-center items-center ">
                             <div className="grid grid-cols-1 mx-5 my-20 md:grid-cols-2 lg:grid-cols-3 gap-8">
