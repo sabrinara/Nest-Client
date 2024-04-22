@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Banner from "../components/Banner";
+// import Banner from "../components/Banner";
 import ClientReview from "../components/ClientReview";
 
 
@@ -9,6 +9,8 @@ import ExServices from "../components/other/ExServices";
 import FeaturedServices from "../components/Service/FeaturedServices";
 import { Helmet } from "react-helmet-async";
 import BannerNew from "./BannerNew";
+import Contact from "../components/Contact";
+import Providers from "../components/Providers";
 
 const Home = () => {
 
@@ -28,9 +30,12 @@ const Home = () => {
             <BannerNew></BannerNew>
             {/* <Banner></Banner> */}
             <AboutUs></AboutUs>
+            <Providers services={services}></Providers>
             <FeaturedServices services={services}></FeaturedServices>
+           
             <ClientReview></ClientReview>
             <ExServices></ExServices>
+            <Contact></Contact>
         </div>
     );
 };

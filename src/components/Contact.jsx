@@ -43,7 +43,7 @@ const Contact = () => {
                 <title>NEST- Contact</title>
             </Helmet>
             <div className="flex  items-center justify-center">
-                <h1 className="text-5xl font-bold text-sky-600 my-10 ">Contact Us</h1>
+                <h1 className="text-5xl font-bold text-sky-600 mt-16 ">Contact Us</h1>
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center">

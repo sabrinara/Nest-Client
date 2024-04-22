@@ -2,7 +2,7 @@
 
 const AboutUs = () => {
     return (
-        <div className=" lg:px-40 lg:py-10">
+        <div className=" lg:px-40 lg:py-20">
             <h1 className="text-5xl font-bold text-center text-cyan-600 my-10  ">About Us</h1>
             <div className="flex items-center justify-between rounded gap-4 md:gap-0 bg-white text-cyan-900  shadow-xl mb-8 mx-4 h-[34vh] md:h-[70vh] ">
                 <div className="w-2/3">

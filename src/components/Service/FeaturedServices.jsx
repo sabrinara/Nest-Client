@@ -9,7 +9,7 @@ const FeaturedServices = ({ services }) => {
     return (
         <div>
             {/* <hr className=" border-sky-400" />s */}
-            <h1 className="text-6xl font-bold text-center mb-16 text-cyan-600">Featured Services</h1>
+            <h1 className="text-6xl font-bold text-center mb-16 text-cyan-600">Popular Services</h1>
             <div className="grid grid-cols-1  lg:grid-cols-2 gap-4 px-16">
 
                 {

@@ -69,7 +69,7 @@ const ServiceDetails = () => {
             <Helmet>
                 <title>NEST-Details of the service</title>
             </Helmet>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-blue-100 shadow-xl my-16 mx-10 rounded ">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6  shadow-xl my-16 mx-10 rounded ">
                 <figure className="w-full md:w-1/2">
                     <img src={service.image} className="w-full h-[100vh] rounded" alt="Service" />
                 </figure>
