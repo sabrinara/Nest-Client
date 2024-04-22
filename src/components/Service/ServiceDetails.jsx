@@ -1,5 +1,5 @@
 import { useEffect, useContext, useState } from "react";
-import {  useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { HiOutlineLocationMarker } from "react-icons/hi";
@@ -104,6 +104,11 @@ const ServiceDetails = () => {
                                 <div className="modal-box">
 
                                     <div className="modal-action mx-4">
+                                        <button className="p-6 absolute top-0 right-0" onClick={() => document.getElementById("my_modal_5").close()}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
                                         <form method="dialog" onSubmit={handleBooking}>
                                             {/* <div className="flex gap-2 ">
                                                 <div className="form-control">
