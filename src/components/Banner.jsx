@@ -11,7 +11,7 @@ const Banner = () => {
 
   }
   return (
-    <Carousel className='h-[50vh] lg:h-[90vh]' style={autoChange} showArrows={false}  >
+    <Carousel className='h-[50vh] md:h-[90vh]' style={autoChange} showArrows={false}  >
      
       <div style={{ position: 'relative' }}>
         <img src={"https://i.ibb.co/XX8J3gQ/h-2.jpg"} className='opacity-50 h-[50vh] lg:h-[130vh]' alt="" />

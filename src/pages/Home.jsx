@@ -26,7 +26,7 @@ const Home = () => {
                 <title>NEST-Home</title>
             </Helmet>
             <BannerNew></BannerNew>
-            <Banner></Banner>
+            {/* <Banner></Banner> */}
             <AboutUs></AboutUs>
             <FeaturedServices services={services}></FeaturedServices>
             <ClientReview></ClientReview>
