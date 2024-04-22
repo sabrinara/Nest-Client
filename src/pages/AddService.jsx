@@ -91,7 +91,7 @@ const AddService = () => {
                                 <input type="name" 
                                 className="input input-bordered" name='provider_name' value={user?.displayName} />
                             </div>
-                            <div className="form-control">
+                            {/* <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Service Provider Email</span>
                                 </label>
@@ -102,7 +102,7 @@ const AddService = () => {
                                     <span className="label-text">Service Provider Avater</span>
                                 </label>
                                 <input type="text" name="provider_image" placeholder="Avatar" value={user?.photoURL} className="input input-bordered" required />
-                            </div>
+                            </div> */}
                           
                             <div className="form-control">
                                 <label className="label">
