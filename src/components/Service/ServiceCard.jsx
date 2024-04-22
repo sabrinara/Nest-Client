@@ -5,14 +5,14 @@ const ServiceCard = ({ service }) => {
     const { _id, image, name, description,price, provider_image,provider_name, area } = service || {}
     return (
         <div>
-            <div className="card  lg:h-[56vh] lg:card-side bg-base-100 shadow-xl md:m-6">
-                <figure className="w-full h-[50vh] lg:h-[56vh] lg:w-[50%]">
-                    <img className="w-full h-[50vh] lg:h-[56vh] lg:max-w-none"  src= {image} /></figure>
-                <div className="card-body lg:w-[50%]">
-                    <h1 className="card-title text-3xl text-red-600">{name}.</h1>
+            <div className="card  lg:h-[56vh] lg:card-side bg-base-100 shadow-xl md:my-6">
+                <figure className="w-full h-[50vh] md:h-[56vh] md:w-[50%]">
+                    <img className="w-full h-[50vh] md:h-[56vh] md:max-w-none"  src= {image} /></figure>
+                <div className="card-body md:w-1/2">
+                    <h1 className="card-title text-2xl font- text-red-600">{name}.</h1>
                     <p className="text-sm overflow-hidden">{description}</p>
                     <p className="text-lg font-semibold"><span className="text-lg font-extrabold text-red-600">Cost:</span>  {price}$</p>
-                    <div className="flex flex-col  lg:flex-row items-center justify-center lg:justify-start lg:gap-6">
+                    <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start lg:gap-6">
                             <img
                                 alt=""
                                 src={provider_image}

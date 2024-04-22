@@ -4,7 +4,7 @@ const ExServices = () => {
     return (
         <div>
             {/* <hr className=" border-sky-400" /> */}
-            <h1 className="text-7xl font-bold text-center text-cyan-600 mb-16 ">Exclusive Services</h1>
+            <h1 className="text-7xl font-bold text-center text-cyan-600 mb-10 ">Exclusive Services</h1>
             <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-10 justify-center ">
 
                 <div className="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">

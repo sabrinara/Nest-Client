@@ -84,11 +84,11 @@ const ServiceDetails = () => {
                         />
                         <h5 className="">{service.provider_name}</h5>
                     </div>
-                    <div className="flex justify-start items-center font-bold text-2xl  md:py-4">
+                    <div className="flex justify-start items-center font-bold text-2xl py-1  md:py-4">
                         <HiOutlineLocationMarker className="text-sky-700" />
                         <h1><span className="text-sky-700">Location:</span>  {service.area} </h1>
                     </div>
-                    <div className="flex justify-start items-center font-bold text-2xl md:py-4">
+                    <div className="flex justify-start items-center font-bold text-2xl py-1 md:py-4">
                         <AiOutlineDollar className="text-sky-700" />
                         <h1><span className="text-sky-700">Cost:</span>  {service.price}</h1>
                     </div>
