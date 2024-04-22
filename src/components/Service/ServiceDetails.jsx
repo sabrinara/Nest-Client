@@ -167,7 +167,7 @@ const ServiceDetails = () => {
                 </div>
             </div>
             <div>
-                <h1 className="text-6xl font-bold text-center my-16">Provider Other Services</h1>
+                <h1 className="text-3xl md:text-4xl font-bold text-center my-16 text-sky-600">Other Services provided by {service.provider_name}</h1>
                 <div className="grid grid-cols-1 lg:grid-cols-2 px-20 gap-4">
                     {filter.map((service, index) => (
                         <div key={index}>
