@@ -5,7 +5,7 @@ const Providers = ({ services }) => {
     const uniqueEmails = new Set();
 
     return (
-        <div className=" mb-16">
+        <div className=" mb-16 text-sky-900 font-bold">
             <h1 className="text-3xl md:text-5xl font-bold text-center my-16 text-cyan-600">Service Providers</h1>
             <Marquee speed={100} className="">
                 {services.map((service) => {

@@ -25,12 +25,12 @@ const NewsSletter = () => {
     return (
         
         <section className="text-gray-600 body-font px-4 py-4 lg:py-8 mx-auto sm:max-w-xl md:max-w-screen-xl">
-        <div className="md:flex justify-around items-center gap-2 py-12 px-3 bg-my-card rounded" data-aos="fade-right" data-aos-duration="1000">
-            <h1 className="sm:text-3xl text-2xl font-semibold title-font mb-4 text-sky-700 text-center">Subscribe to our Newsletter</h1>
+        <div className="flex flex-col md:flex-row items-center md:justify-around gap-2 py-12 px-3 bg-my-card rounded" data-aos="fade-right" data-aos-duration="1000">
+            <h1 className="text-3xl md:text-4xl font-semibold title-font mb-4 text-sky-600 text-center">Subscribe to our Newsletter</h1>
             <div>
-                {emailError && <span className="text-sm text-red-400 mr-2">*{emailError}</span>}
+                {emailError && <span className="text-sm text-red-400 mr-2 ">*{emailError}</span>}
                 <div className="join">
-                    <input type="email" value={email} onChange={handleEmail} className="input input-info input-bordered join-item w-full" placeholder="Email" required />
+                    <input type="email" value={email} onChange={handleEmail} className="input input-info input-bordered join-item w-full rounded-l-full" placeholder="Email" required />
                     <button className="btn btn-info join-item rounded-r-full capitalize" onClick={handleSubmit}>Subscribe</button>
                 </div>
             </div>
