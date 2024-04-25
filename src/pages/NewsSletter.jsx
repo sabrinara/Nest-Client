@@ -24,9 +24,9 @@ const NewsSletter = () => {
     }
     return (
         
-        <section className="text-gray-600 body-font px-4 py-4 lg:py-8 mx-auto sm:max-w-xl md:max-w-screen-xl">
+        <section className=" body-font px-4 py-4 lg:py-8 mx-auto sm:max-w-xl md:max-w-screen-xl">
         <div className="flex flex-col md:flex-row items-center md:justify-around gap-2 py-12 px-3 bg-my-card rounded" data-aos="fade-right" data-aos-duration="1000">
-            <h1 className="text-3xl md:text-4xl font-semibold title-font mb-4 text-sky-600 text-center">Subscribe to our Newsletter</h1>
+            <h1 className="text-3xl md:text-4xl font-semibold title-font mb-4 text-cyan-600 text-center">Subscribe to our Newsletter</h1>
             <div>
                 {emailError && <span className="text-sm text-red-400 mr-2 ">*{emailError}</span>}
                 <div className="join">

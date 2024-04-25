@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AboutUs = () => {
     return (
         <div className=" md:px-20 md:py-10">
-            <h1 className="text-5xl font-bold text-center text-cyan-600 py-10">About Us</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-center text-cyan-600 py-10">About Us</h1>
             <div className="flex  items-center justify-between rounded gap-4 md:gap-0 bg-white text-cyan-900  shadow-xl mb-8 mx-4 h-[38vh] md:h-[74vh] ">
                 <div className="w-2/3 md:1/3">
                     <img src={"https://i.ibb.co/3WP2xvR/heavy-box.png"}  />
