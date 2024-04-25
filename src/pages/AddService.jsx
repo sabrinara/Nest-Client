@@ -15,17 +15,18 @@ const AddService = () => {
     const handleAddService = (event) => {
         event.preventDefault();
         const form = event.target;
+    
         const name = form.name.value;     
         const provider_name = form.provider_name.value;
-        const provider_email = form.provider_email.value;
-        const provider_image = form.provider_image.value;
+        const provider_email = user?.email; // Assuming user email comes from context
+        const provider_image = user?.photoURL; // Assuming user photoURL comes from context
         const image = form.photo.value;
         const price = parseFloat(form.price.value);
         const description = form.description.value;
         const area = form.area.value;
-        const newService = { name, image, price, description,area, provider_name, provider_email, provider_image };
-        console.log(newService);
-
+    
+        const newService = { name, image, price, description, area, provider_name, provider_email, provider_image };
+    
         fetch('https://nest-backend-iota.vercel.app/services', {
             method: 'POST',
             headers: {
@@ -33,7 +34,7 @@ const AddService = () => {
             },
             body: JSON.stringify(newService)
         })
-        .then (res => res.json())
+        .then(res => res.json())
         .then(data => {
             console.log(data);
             if(data.insertedId){
@@ -42,15 +43,32 @@ const AddService = () => {
                     text: 'Product Added into My Cart Sucessfully!',
                     icon: 'success',
                     confirmButtonText: 'Cool!',
-                  })
-                  navigate('/service');
+                });
+                navigate('/service');
+            } else {
+                // Handle case when service addition fails
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Failed to add service',
+                    icon: 'error',
+                    confirmButtonText: 'Ok',
+                });
             }
         })
-
+        .catch(error => {
+            console.error('Error adding service:', error);
+            // Handle error, show error message to user, etc.
+            Swal.fire({
+                title: 'Error',
+                text: 'An error occurred while adding the service',
+                icon: 'error',
+                confirmButtonText: 'Ok',
+            });
+        });
+    
         form.reset();
-     
-        
-    }
+    };
+    
 
     return (
         <div>
