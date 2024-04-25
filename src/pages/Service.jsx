@@ -35,7 +35,7 @@ const Service = () => {
 
             <h1 className="text-5xl font-bold text-center text-sky-600 mt-20">All Services</h1>
 
-            <div className="flex justify-center my-10 ">
+            <div className="flex justify-center my-10 text-sky-800">
                 <div className="relative">
                     <select
                         value={selectedService}
