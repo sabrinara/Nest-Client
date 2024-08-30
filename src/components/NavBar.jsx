@@ -56,6 +56,9 @@ const NavBar = ({ toggleTheme }) => {
                     <li>
                         <NavLink to="/login">Login</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/register">Register</NavLink>
+                    </li>
 
                 </>
 
@@ -93,7 +96,7 @@ const NavBar = ({ toggleTheme }) => {
                     <div className="flex flex-row items-center justify-center ">
 
                         {
-                            user?.email ?
+                            user?.email &&
 
                                 <div className="dropdown dropdown-end ml-1">
                                     <label tabIndex={0} className=" bg-cyan-900">
@@ -152,8 +155,7 @@ const NavBar = ({ toggleTheme }) => {
                                     </ul>
                                 </div>
 
-                                :
-                                <Link to="/login" className="btn btn-ghost hover:bg-cyan-900 hover:text-white  focus:text-white">Login</Link>
+                               
 
                         }
                         <label className="swap swap-rotate pl-2">

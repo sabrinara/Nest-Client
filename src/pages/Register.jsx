@@ -65,10 +65,10 @@ const Register = () => {
                         <h1 className="text-5xl font-bold text-cyan-800">Register!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full md:w-[100rem] max-w-xl shadow-2xl">
-                        <a href="#" className="flex items-center justify-center mt-8">
+                        <Link to="/" className="flex items-center justify-center mt-8">
                             <img className="w-10 h-10 " src={Logo} alt="logo" />
                             <h1 className="text-2xl "> <span className="text-4xl font-sans font-bold text-red-500">N</span>EST</h1>
-                        </a>
+                        </Link>
 
 
 

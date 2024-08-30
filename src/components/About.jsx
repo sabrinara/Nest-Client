@@ -11,7 +11,7 @@ const About = () => {
                 <h1 className="text-5xl font-bold text-center text-sky-600 my-6  ">About Us</h1>
                 <div className="flex items-center justify-between rounded gap-4 md:gap-0 bg-white text-cyan-900  shadow-xl mb-8 mx-4 h-[34vh] md:h-[70vh] ">
                     <div className="w-2/3">
-                        <img src={"https://i.ibb.co/3WP2xvR/heavy-box.png"} />
+                        <img src="./about/heavy-box.png" />
                     </div>
                     <div className=" w-1/3 md:mr-16">
                         <h2 className=" md:text-3xl font-bold text-sky-700 md:mb-2">Heavy Furniture Moving!</h2>
@@ -21,7 +21,7 @@ const About = () => {
                 </div>
                 <div className="flex flex-row-reverse items-center justify-between rounded gap-4 md:gap-0 bg-white text-cyan-900  shadow-xl mb-8 mx-4 h-[34vh] md:h-[70vh] ">
                     <div className="w-2/3">
-                        <img src={"https://i.ibb.co/0MTsq6b/packing.png"} className="" />
+                        <img src="./about/packing.png" className="" />
                     </div>
                     <div className=" w-[30vh] md:w-1/3 ml-10 md:ml-16 py-8">
                         <h2 className=" md:text-3xl font-bold text-sky-700 md:mb-2">Any type of shifting!</h2>
@@ -31,7 +31,7 @@ const About = () => {
                 </div>
                 <div className="flex items-center justify-between rounded gap-4 md:gap-0 bg-white text-cyan-900  shadow-xl mb-8 mx-4 h-[34vh] md:h-[70vh] ">
                     <div className="w-1/2 md:ml-16">
-                        <img src={"https://i.ibb.co/GVR7vNX/moving.png"} className="h-[30vh] md:h-[60vh]" />
+                        <img src="./about/moving.png" className="h-[30vh] md:h-[60vh]" />
                     </div>
                     <div className=" w-1/2 mr-6 md:mr-16">
                         <h2 className=" md:text-3xl font-bold text-sky-700 md:mb-2">Also helping with packing!</h2>

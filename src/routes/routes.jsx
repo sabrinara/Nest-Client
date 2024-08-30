@@ -40,14 +40,7 @@ const routes = createBrowserRouter([
                 element: <PrivateRouters><Contact></Contact></PrivateRouters>,
             
             },
-            {
-                path: '/login',
-                element:<Login></Login>
-            },
-            {
-                path: "/register",
-                element:<Register></Register>
-            },
+           
             {
                 path:"/service",
                 element:<PrivateRouters><Service></Service></PrivateRouters>
@@ -83,7 +76,16 @@ const routes = createBrowserRouter([
                 element:<PrivateRouters><Pending></Pending></PrivateRouters>
             }
           
-        ]
+        ],
+        
+    },
+    {
+        path: '/login',
+        element:<Login></Login>
+    },
+    {
+        path: "/register",
+        element:<Register></Register>
     },
    
 ]);

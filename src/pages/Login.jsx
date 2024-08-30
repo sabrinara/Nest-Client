@@ -24,8 +24,9 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                toast('Successfully Login');
                 navigate('/');
+                toast('Successfully Login');
+               
             })
             .catch(error => {
                 console.log(error.message);
@@ -36,8 +37,9 @@ const Login = () => {
         googleSignIn()
             .then((result) => {
                 console.log(result.user)
-                toast('Successfully Login');
                 navigate('/');
+                toast('Successfully Login');
+                
             })
             .catch(error => {
                 console.error(error);
@@ -53,10 +55,10 @@ const Login = () => {
 
                     </div>
                     <div className="card flex-shrink-0 w-full md:w-[100rem] max-w-xl shadow-2xl">
-                    <a href="#" className="flex items-center justify-center mt-8">
+                    <Link to="/" className="flex items-center justify-center mt-8">
                             <img className="w-10 h-10 " src={Logo} alt="logo" />
                             <h1 className="text-2xl "> <span className="text-4xl font-sans font-bold text-red-500">N</span>EST</h1>
-                        </a>
+                        </Link>
 
                         <form className="card-body" onSubmit={handleLogin}>
                             <div className="form-control">

@@ -11,19 +11,21 @@ const PrivateRouters = ({ children }) => {
     if (loading) {
         return (
             <RiseLoader
-            className="text-center items-center py-40"
-           color="rgb(2 132 199)"
-            size={20}
-            speedMultiplier={1}
-          />
+                className="text-center items-center py-40"
+                color="rgb(2 132 199)"
+                size={20}
+                speedMultiplier={1}
+            />
         )
     }
 
     if (user) {
         return children;
     }
-    return <Navigate state={location.pathname} to="/login"></Navigate>
-    
+    else {
+        return <Navigate state={location.pathname} to="/login"></Navigate>;
+    }
+
 };
 
 export default PrivateRouters;
